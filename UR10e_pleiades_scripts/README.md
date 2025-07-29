@@ -7,7 +7,7 @@ This setup enables **asynchronous inference** by splitting observation and actio
 
 ---
 
-#### 🖥️ Local Machine Responsibilities
+####  Local Machine Responsibilities
 
 * Starts a **server** that:
 
@@ -17,7 +17,7 @@ This setup enables **asynchronous inference** by splitting observation and actio
 
 ---
 
-#### 🔗 Remote GPU (Pleiades) Inference Flow
+####  Remote GPU (Pleiades) Inference Flow
 
 1. **SSH Tunnel**
    Set up a tunnel to forward local port `5000` to the remote cluster:
