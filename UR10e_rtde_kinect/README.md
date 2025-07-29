@@ -1,5 +1,3 @@
-Here’s a cleaned-up and professional version of your Kinect and UR10e setup instructions:
-
 ---
 
 ### Kinect + UR10e Setup
@@ -51,5 +49,3 @@ freenect-glview
   This has been adapted specifically for the UR10e + LeRobot setup.
 
 ---
-
-Let me know if you want all of this merged into one complete README or broken into sections like `docs/hardware_setup.md`.
