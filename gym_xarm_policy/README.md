@@ -1,9 +1,8 @@
-Here’s a cleaner, professional version of your `gym_xarm` section, keeping it technical, concise, and human-readable without emojis or unnecessary formatting:
 
 ---
 
 ### `gym_xarm` Usage Guide
-
+Follow the steps of https://github.com/huggingface/gym-xarm for the isntallation of the environment in the same conda anvironemt as lerobot
 Ensure the following setup for proper simulation and training:
 
 * Set `MUJOCO_GL=glfw` if you encounter rendering issues with MuJoCo.
@@ -54,7 +53,4 @@ python src/lerobot/scripts/eval.py \
 
 * Output includes **evaluation videos** stored under the specified `output_dir`.
 * Logs include **mean reward**, **max reward**, **reward sum**, and **average reward per episode**.
-
 ---
-
-Let me know if you want this integrated into the full README or split into a separate `docs/` page.
