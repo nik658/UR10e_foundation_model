@@ -1,26 +1,68 @@
-Implementation of Imitaiton leraning models on UR10e available in IRIS Lab, University of Aveiro
 
-This is done using Lerobot interface, so clone lerobot git and follow the instructions given in the github to install lerobot and clone this repository as well
+# Pi-0 Imitation Learning on UR10e using LeRobot Interface
 
-The motivation of this project is to implement and test the Pi-0 model on UR10e available in the laboratory
+This project implements and tests the **Pi-0 Imitation Learning model** on a **UR10e robot** available in the **IRIS Lab, University of Aveiro**, using the [LeRobot](https://github.com/openrobotlab/lerobot) interface.
 
-**First stage**
-Implementing different policies like ACT, TDMPC on gym-xarm environemnt as that is the closest to the robot in the laboratory and is well documented 
+---
 
-- script which can record the dataset through teleoperation using joystick and pushes the dataset to hugging face. you can check the datasets made in huggingface id - nik658 
+## 📌 Motivation
+
+To explore and validate state-of-the-art imitation learning models like **Pi-0** on real robotic hardware, and build an end-to-end pipeline from **teleoperation-based data collection** to **policy deployment on the UR10e**.
+
+---
+
+## 🔧 Installation
+
+1. **Clone LeRobot**:
+   Follow the installation steps on the [LeRobot GitHub repository](https://github.com/openrobotlab/lerobot).
+
+2. **Clone this repository**:
+   This repo contains the UR10e-specific scripts for teleoperation, training, and inference.
+
+---
+
+## 🚀 Project Stages
+
+### **Stage 1: Simulation Prototyping (Gym-XArm)**
+
+* Implemented imitation learning policies such as **ACT** and **TDMPC** in the `gym-xarm` environment.
+* Collected datasets using joystick-based teleoperation.
+* Datasets are pushed to [HuggingFace Datasets](https://huggingface.co/nik658) under the user ID `@nik658`.
+
+---
+
+### **Stage 2: Real Robot Setup**
+
+* Setup of **RTDE control** and **teleoperation of the UR10e** using a joystick.
+* Integration of **Kinect** sensor for visual feedback and observation.
+
+---
+
+### **Stage 3: Local Policy Execution**
+
+* Developed scripts for:
+
+  * **Recording episodes** via joystick teleoperation.
+  * **Pushing collected episodes** to a HuggingFace dataset repo.
+  * **Training LeRobot policies** on the pushed data.
+  * **Running inference locally** on the trained Pi-0 model.
+
+* **Problem:** Local inference with Pi-0 was computationally heavy (GPU unavailable, CPU too slow).
+
+* **Solution:** Implemented **asynchronous inference** to decouple observation and action steps.
+
+---
+
+### **Stage 4: Remote Inference via Socket**
+
+* Established a **socket connection** between:
+
+  * **Local PC** (runs RTDE control and Kinect)
+  * **Remote GPU cluster** (runs the policy inference)
+
+This setup allows real-time execution of high-compute models like Pi-0 while keeping robot control responsive locally.
 
 
-**Second stage**
-Implementing rtde control and teleoperation of UR10e using joystick and interfacing with kinect
+---
 
-**Third stage**
-Implementing a policy to run locally on my laptop using rtde and lerobot interface which control the real robot
 
-- script to record epsiodes through teleoperation using joystick and push to github
-- lerobot train script to train using the huggingface repo where the episodes are pushed
-- script to run inference locally
-
-The problem here was that my gpu was not able to locally run inference of pi0 and cpu was too slow
-
-**Fourth stage**
-Implemeneting a socket connection between the cloud gpu cluster and the local pc to run the policy on the cluster and handle observation and control robot locally
