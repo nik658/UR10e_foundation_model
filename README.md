@@ -5,13 +5,13 @@ This project implements and tests the **Pi-0 Imitation Learning model** on a **U
 
 ---
 
-## 📌 Motivation
+## Motivation
 
-To explore and validate state-of-the-art imitation learning models like **Pi-0** on real robotic hardware, and build an end-to-end pipeline from **teleoperation-based data collection** to **policy deployment on the UR10e**.
+To explore and validate state-of-the-art imitation learning models like **Pi-0** and **smol-vla** on real robotic hardware, and build an end-to-end pipeline from **teleoperation-based data collection** to **policy deployment on the UR10e**.
 
 ---
 
-## 🔧 Installation
+## Installation
 
 1. **Clone LeRobot**:
    Follow the installation steps on the [LeRobot GitHub repository](https://github.com/openrobotlab/lerobot).
@@ -25,7 +25,7 @@ To explore and validate state-of-the-art imitation learning models like **Pi-0**
 
 ### **Stage 1: Simulation Prototyping (Gym-XArm)**
 
-* Implemented imitation learning policies such as **ACT** and **TDMPC** in the `gym-xarm` environment.
+* Implemented imitation learning policies such as **ACT**, **TDMPC**, **smol-vla** and **pi0** in the `gym-xarm` environment.
 * Collected datasets using joystick-based teleoperation.
 * Datasets are pushed to [HuggingFace Datasets](https://huggingface.co/nik658) under the user ID `@nik658`.
 
@@ -35,6 +35,7 @@ To explore and validate state-of-the-art imitation learning models like **Pi-0**
 
 * Setup of **RTDE control** and **teleoperation of the UR10e** using a joystick.
 * Integration of **Kinect** sensor for visual feedback and observation.
+* Later added 1080p camera feed of c99 camera as another camera feed
 
 ---
 
