@@ -21,7 +21,7 @@ To explore and validate state-of-the-art imitation learning models like **Pi-0**
 
 ---
 
-## 🚀 Project Stages
+## Project Stages
 
 ### **Stage 1: Simulation Prototyping (Gym-XArm)**
 
